@@ -5,7 +5,9 @@ class Timer extends React.Component {
 
 	componentDidMount() {
 		this.timer = setInterval(() => {
-			this.setState({ time: this.state.time + 1 });
+			this.setState((prevState) => ({
+				time: prevState.time + 1,
+			}));
 		}, 1000);
 	}
 
@@ -16,7 +18,7 @@ class Timer extends React.Component {
 	render() {
 		return (
 			<div>
-				<p>Time: {this.state.time} sec.</p>
+				<p>Time class: {this.state.time} sec.</p>
 			</div>
 		);
 	}
